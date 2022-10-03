@@ -14,6 +14,12 @@ footer {
             padding-right: 20px;
 
         }
+        a {
+            transition: .3s;
+            &:hover {
+                color: $violet-color;
+            }
+        }
     }
     .copy-right {
         background-color: $bottom-footer-bg;
