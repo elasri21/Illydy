@@ -1,0 +1,395 @@
+// start landing
+.landing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+        @media #{$mobile} {
+            font-size: 30px;
+            & > span {
+                margin: 0 0 !important;
+            }
+        }
+        text-transform: capitalize;
+        font-size: 80px;
+        & > span {
+            width: 20px;
+            height: 20px;
+            margin: 0 -10px;
+        } 
+    }
+    & > p {
+        line-height: 1.6;
+    }
+    .btn-container {
+        .btn {
+            width: 200px;
+            outline: none;
+            border: 2px solid;
+            transition: .3s;
+        }
+        button.btn {
+            border-color: $yellow-color;
+            &:hover {
+                background-color: $violet-color;
+                border-color: $violet-color;
+            }
+        }
+        a.btn {
+            border-color: white;
+            background-color: rgba( 0, 0, 0, .2 );
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+}
+// start about
+.about {
+    margin-bottom: 60px;
+    h2 {
+        margin-bottom: 50px;
+    }
+    p {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+        margin-bottom: 100px;
+    }
+
+    .skills {
+        @media #{$small} {
+            & > div {
+                width: 30% !important;
+                margin-bottom: 0 !important;
+            }
+        }
+        & > div {
+            width: 100%;
+            position: relative;
+            height: 3px;
+            background-color: #ebebeb;
+            border-radius: 2px;
+            margin-bottom: 60px;
+            span {
+                height: 5px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                border-radius: 3px;
+                &::before {
+                    position: absolute;
+                    width: 40px;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    right: -30px;
+                    top: -50px;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -22px;
+                    right: -6px;
+                    border-width: 6px;
+                    border-style: solid;
+                }
+                &.one::before {
+                    content: "60%";
+                    background-color: $red-color;
+                }
+                &.one::after {
+                    border-color: $red-color transparent transparent transparent;
+                }
+                &.two::before {
+                    content: "82%";
+                    background-color: $yellow-color;
+                }
+                &.two::after {
+                    border-color: $yellow-color transparent transparent transparent;
+                }
+                &.three::before {
+                    content: "86%";
+                    background-color: $violet-color;
+                }
+                &.three::after {
+                    border-color: $violet-color transparent transparent transparent;
+                }
+            }
+        }
+    }
+}
+// start project
+.projects {
+    h2 {
+        margin-bottom: 10px;
+    }
+    p {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .images {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        // height: 200px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+// start testimonials
+.testimonials {
+    background-image: url("../images/testiomnials-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+    h2.main-title {
+        color: white;
+        margin-bottom: 50px;
+    }
+    .slider {
+        margin-bottom: 50px;
+        &:not(:first-of-type) {
+            display: none;
+        }
+    }
+    img {
+        margin-bottom: 50px;
+    }
+    p {
+        max-width: 800px;
+        padding: 50px 30px 25px 30px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    p::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        border-width: 20px;
+        border-style: solid;
+        border-color: $violet-color transparent transparent transparent;
+    }
+    h3 {
+        margin-top: 40px;
+        font-size: 30px;
+    }
+    .slider-btns span {
+        width: 15px;
+        height: 15px;
+        transition: .3s;
+        background-color: white;
+        &.active {
+            background-color: $yellow-color;
+        }
+        &:not(.active):hover {
+            background-color: $violet-color;
+        }
+    }
+}
+// start services
+.services .service-box {
+    @media (min-width: 768px) {
+        width: calc(33% - 30px);
+    }
+    p {
+        line-height: 1.6;
+    }
+}
+// start latest news
+.latest-news {
+    background-color: $news-bg;
+    h2.main-title {
+        color: #fff;
+    }
+    .blog-link  {
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        transition: .3s;
+        &:hover {
+            background-color: $violet-color;
+        }
+    }
+    .article-container {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        @media (min-width: 921px) {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+        @media #{$mobile} {
+            text-align: left;
+        }
+        text-align: center;
+        article {
+            img {
+                width: 100%;
+                height: 213px;
+            }
+            .title-link {
+                color: $main-title-color;
+                transition: .3s;
+                &:hover {
+                    color: $yellow-color;
+                }
+            }
+            .more {
+                transition: .3s;
+                i {
+                    transition: .3s;
+                }
+                &:hover {
+                    color: $violet-color;
+                }
+            }
+        }
+    }
+}
+// start counter
+.counter {
+    background-image: url("../images/front-page/front-page-counter.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @media (min-width: 768px) {
+        & > div {
+            width: 33%;
+            border-right: 1px solid #fff;
+        }
+    }
+    @media #{$mobile} {
+        flex-direction: column;
+    }
+    div {
+        p {
+            text-transform: uppercase;
+            letter-spacing: -1.5px;
+        }
+    }
+}
+// start team
+.team {
+    background-color: rgba(238, 238, 238, .05);
+    .team-container {
+        @media (min-width: 768px) and (max-width: 921px) {
+            .box {
+                flex-direction: column;
+                align-items: center !important;
+                text-align: center;
+                gap: 20px;  
+                .icons {
+                    justify-content: center;
+                } 
+            }
+        }
+        @media (max-width: 767px) {
+            flex-direction: column;
+            .box {
+                width: 100%;  
+                &:not(:last-of-type) {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        .box {
+            align-items: flex-start;
+            img {
+                width: 100px;
+                height: 100px;
+            }
+            .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                border: 1px solid;
+                border-radius: 50%;
+                background-color: white;
+                padding: 5px;
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+// start contact
+.contact-us {
+    .manual-contact {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-column-gap: 50px;
+        @media (min-width: 922px) {
+            & > div {
+                .title {
+                    border-right: 1px solid $field-border;
+                    padding-right: 30px;
+                }
+            }
+        }
+        @media (max-width: 500px) {
+            .box {
+                flex-direction: column;
+            }
+        }
+    }
+    .form {
+        form {
+            @media (min-width: 768px) {
+                .inputs {
+                    p {
+                        width: calc(33% - 30px) !important;
+                    }
+                }
+            }
+            @media #{$mobile} {
+                .inputs {
+                    flex-direction: column;
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+            .field {
+                background-color: $field-bg;
+                border: 1px solid $field-border;
+                outline: none;
+                caret-color: $main-text-color;
+            }
+            textarea {
+                resize: none;
+                min-height: 150px;
+            }
+            input[type="submit"] {
+                width: 150px;
+                border: 1px solid $yellow-color;
+                outline: none;
+                transition: .3s;
+                border-radius: 6px;
+                cursor: pointer;
+                margin-left: auto;
+                &:hover {
+                    opacity: .9;
+                }
+            }
+        }
+    }
+}

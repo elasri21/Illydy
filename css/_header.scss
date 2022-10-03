@@ -1,0 +1,55 @@
+header {
+    position: relative;
+    padding: 40px 60px;
+    height: 100vh;
+    background-image: url("../images/front-page/front-page-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @media #{$medium} {
+        .hamburger {
+            display: none !important;
+        }
+        .close {
+            display: none !important;
+        }
+    }
+    @media (max-width: 921px) {
+        nav {
+            // display: none;
+            position: absolute;
+            left: -100%;
+            top: 100px;
+            width: 100%;
+            transition: left .4s, height .4s;
+            z-index: 11;
+            ul {
+                display: block !important;
+                text-align: center;
+                background-color: white;
+                li {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    margin-right: 0 !important;
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid $field-border;
+                    }
+                    a {
+                        font-weight: 400 !important;
+                        color: black !important;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        width: 100px;
+        height: 30px;
+        img {
+            max-width: 100%;
+        }
+    }
+    .close {
+        display: none;
+    }
+}
